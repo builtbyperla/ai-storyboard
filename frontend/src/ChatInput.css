@@ -1,0 +1,130 @@
+/* ============================================
+   CHAT INPUT PANEL
+   ============================================ */
+
+.chat-input-panel {
+  width: 100%;
+}
+
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.chat-textarea {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(120, 100, 80, 0.2);
+  background: #fefefd;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #2a2825;
+  outline: none;
+  transition: all 0.2s ease;
+  resize: none;
+  font-family: inherit;
+  min-height: 80px;
+}
+
+.chat-textarea:hover:not(:disabled) {
+  border-color: rgba(124, 152, 133, 0.3);
+}
+
+.chat-textarea:focus {
+  border-color: rgba(124, 152, 133, 0.4);
+  box-shadow: 0 0 0 3px rgba(124, 152, 133, 0.08);
+}
+
+.chat-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-textarea::placeholder {
+  color: rgba(90, 85, 80, 0.5);
+}
+
+.chat-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-send-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c9885 0%, #6b8a73 100%);
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(124, 152, 133, 0.2);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6b8a73 0%, #5d7862 100%);
+  box-shadow: 0 2px 6px rgba(124, 152, 133, 0.3);
+}
+
+.chat-send-btn:disabled {
+  background: linear-gradient(135deg, rgba(124, 152, 133, 0.5) 0%, rgba(107, 138, 115, 0.5) 100%);
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+.chat-flush-btn {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: rgba(120, 100, 80, 0.1);
+  color: rgba(90, 85, 80, 0.7);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-flush-btn:hover:not(:disabled) {
+  background: rgba(120, 100, 80, 0.2);
+  color: rgba(90, 85, 80, 0.9);
+}
+
+.chat-flush-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.chat-flush-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(118, 150, 120, 0.544);
+  flex-shrink: 0;
+  opacity: 0;
+}
+
+.chat-flush-indicator.flash {
+  animation: chatFlushFlash 1s ease-out;
+}
+
+@keyframes chatFlushFlash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: #7a9e82;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

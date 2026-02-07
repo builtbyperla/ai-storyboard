@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+frontend/dist/
+frontend/node_modules/
+session_data/
+.env
