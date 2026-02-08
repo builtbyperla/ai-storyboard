@@ -60,11 +60,16 @@ cd ..
 
 ### 6. Run the app
 
-Start the backend (development):
+Start the backend:
 
 ```bash
 source venv/bin/activate
 python app.py
+```
+
+Open your browser and enter this in place of the URL to open the app:
+```
+http://localhost:8000/
 ```
 ## Usage
 
@@ -75,8 +80,8 @@ How it works (high level):
   running and inference will automatically be triggered by pauses in speech.
   Text input is made available by clicking the chat icon near the minimap. 
 - User settings are available in the settings panel accessible by the icon at the top-left of screen.
-  Here you can change the audio behavior mode (single user vs collaborative settings), the default
-  image generation style, and the voice activity detection behavior.
+  Here you can change the audio behavior mode (single user vs collaborative settings), the default image generation style, and the voice activity detection behavior.
+- In multi-user mode, use the keyword "Atlas" for targeted requests.
 
 Common things you can ask the agent:
 - Create, add, or refine scene descriptions and frame text.
@@ -99,7 +104,7 @@ ai-storyboard/
 ├── common/                       # Shared models and enums
 ├── core/
 │   ├── app_config.py             # Some hard-coded application configs
-│   ├── db_core.py                # Database core (SQL)
+│   ├── db_core.py                # Database core (SQLite)
 │   ├── vector_db.py              # Vector database interface
 │   ├── memory_worker.py          # Long-term memory worker task
 │   ├── embedding_worker.py       # Embedding worker task
